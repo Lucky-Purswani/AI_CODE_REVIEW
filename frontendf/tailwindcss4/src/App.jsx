@@ -39,7 +39,7 @@ Enter your code on the left and click **Review** to get detailed feedback, sugge
   async function reviewCode() {
     setReview("🔍 Analyzing your code...");
     try {
-      const response = await fetch('http://localhost:3000/api/get-response', {
+      const response = await fetch('https://ai-code-review-backend-one.vercel.app/api/get-response', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
