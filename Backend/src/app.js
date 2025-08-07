@@ -4,10 +4,12 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'https://bugsmasherai.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // adjust based on what you use
-  credentials: true // optional: allow cookies/auth headers
+  origin: 'https://bugsmasherai.vercel.app', // allow only this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // include OPTIONS for preflight
+  allowedHeaders: ['Content-Type', 'Authorization'], // headers your frontend might send
+  credentials: true // optional, only if you're using cookies/auth
 }));
+
 
 app.use(express.json());
 
